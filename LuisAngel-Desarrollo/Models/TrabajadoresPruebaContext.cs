@@ -19,9 +19,9 @@ public partial class TrabajadoresPruebaContext : DbContext
 
     public virtual DbSet<Distrito> Distritos { get; set; }
 
-    public virtual DbSet<Provincium> Provincia { get; set; }
+    public virtual DbSet<Provincia> Provincia { get; set; }
 
-    public virtual DbSet<Trabajadore> Trabajadores { get; set; }
+    public virtual DbSet<Trabajadores> Trabajadores { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { }
 //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
@@ -55,7 +55,7 @@ public partial class TrabajadoresPruebaContext : DbContext
                 .HasConstraintName("FK__Distrito__IdProv__4F7CD00D");
         });
 
-        modelBuilder.Entity<Provincium>(entity =>
+        modelBuilder.Entity<Provincia>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Provinci__3214EC078BE016B2");
 
@@ -68,7 +68,7 @@ public partial class TrabajadoresPruebaContext : DbContext
                 .HasConstraintName("FK__Provincia__IdDep__5070F446");
         });
 
-        modelBuilder.Entity<Trabajadore>(entity =>
+        modelBuilder.Entity<Trabajadores>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Trabajad__3214EC07D2313AC3");
 
